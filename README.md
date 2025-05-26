@@ -48,7 +48,6 @@ lofi list
 
 - lofi-girl: Classic lofi beats
 - chilled-cow: Relaxing lofi music
-- synthwave: Synthwave and retrowave
 
 ## Controls
 

@@ -38,7 +38,6 @@ var (
 var stations = map[string]string{
 	"lofi-girl":   "https://play.streamafrica.net/lofiradio",
 	"chilled-cow": "https://stream.zeno.fm/0r0xa792kwzuv",
-	"synthwave":   "https://stream.zeno.fm/0yn0jgc4tz0uv",
 }
 
 func init() {
