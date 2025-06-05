@@ -16,12 +16,12 @@ A simple command-line interface to play lofi music in your terminal, written in 
 
 2. Install the CLI tool:
    ```bash
-   go install github.com/JesseLucas1996/lofi-cli@latest
+   go install github.com/Jesse-Lucas1996/lofi-cli@latest
    ```
 
    Or build from source:
    ```bash
-   git clone https://github.com/JesseLucas1996/lofi-cli.git
+   git clone https://github.com/Jesse-Lucas1996/lofi-cli.git
    cd lofi-cli
    go build
    sudo mv lofi-cli /usr/local/bin/lofi

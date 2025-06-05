@@ -1,4 +1,4 @@
-module github.com/JesseLucas1996/lofi-cli
+module github.com/Jesse-Lucas1996/lofi-cli
 
 go 1.21
 
