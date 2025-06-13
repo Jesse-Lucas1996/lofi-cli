@@ -30,15 +30,10 @@ var (
 		Use:   "list",
 		Short: "List available stations",
 		Run: func(cmd *cobra.Command, args []string) {
-			listStations()
+			ListStations()
 		},
 	}
 )
-
-var stations = map[string]string{
-	"lofi-girl":   "https://play.streamafrica.net/lofiradio",
-	"chilled-cow": "https://stream.zeno.fm/0r0xa792kwzuv",
-}
 
 func init() {
 	playCmd.Flags().StringVarP(&station, "station", "s", "lofi-girl", "Station to play (default: lofi-girl)")
@@ -47,7 +42,7 @@ func init() {
 }
 
 func playLofi(stationName string) {
-	url, exists := stations[stationName]
+	url, exists := GetStationURL(stationName)
 	if !exists {
 		fmt.Printf("Error: Station '%s' not found\n", stationName)
 		os.Exit(1)
@@ -71,13 +66,6 @@ func playLofi(stationName string) {
 	<-sigChan
 	fmt.Println("\nStopping playback...")
 	cmd.Process.Signal(syscall.SIGTERM)
-}
-
-func listStations() {
-	fmt.Println("\nAvailable Lofi Stations:")
-	for name := range stations {
-		fmt.Printf("• %s\n", name)
-	}
 }
 
 func main() {
