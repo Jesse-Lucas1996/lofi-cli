@@ -19,6 +19,9 @@ A simple command-line interface to play lofi music in your terminal, written in 
    
    # On Arch Linux
    sudo pacman -S mpv
+
+   # On Windows
+   reconsider your life
    ```
 
 2. Install the CLI tool globally:
