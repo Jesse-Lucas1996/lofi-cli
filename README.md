@@ -11,7 +11,14 @@ A simple command-line interface to play lofi music in your terminal, written in 
 
 1. Install MPV media player if you haven't already:
    ```bash
+   # On Ubuntu/Debian
    sudo apt-get install mpv
+   
+   # On macOS
+   brew install mpv
+   
+   # On Arch Linux
+   sudo pacman -S mpv
    ```
 
 2. Install the CLI tool:
@@ -19,13 +26,29 @@ A simple command-line interface to play lofi music in your terminal, written in 
    go install github.com/Jesse-Lucas1996/lofi-cli@latest
    ```
 
-   Or build from source:
+3. Ensure Go's bin directory is in your PATH:
    ```bash
-   git clone https://github.com/Jesse-Lucas1996/lofi-cli.git
-   cd lofi-cli
-   go build
-   sudo mv lofi-cli /usr/local/bin/lofi
+   export PATH=$PATH:$(go env GOPATH)/bin
    ```
+   
+   Add this to your `~/.bashrc` or `~/.zshrc` to make it permanent:
+   ```bash
+   echo 'export PATH=$PATH:$(go env GOPATH)/bin' >> ~/.bashrc
+   source ~/.bashrc
+   ```
+
+### Updating to Latest Version
+
+If you've already installed lofi-cli and want to update to the latest version:
+
+```bash
+go clean -modcache
+go install github.com/Jesse-Lucas1996/lofi-cli@latest
+
+git clone https://github.com/Jesse-Lucas1996/lofi-cli.git
+cd lofi-cli
+go build -o $(go env GOPATH)/bin/lofi-cli
+```
 
 ## Usage
 
@@ -46,8 +69,16 @@ lofi list
 
 ## Available Stations
 
-- lofi-girl: Classic lofi beats
-- chilled-cow: Relaxing lofi music
+- **lofi-girl**: Classic lofi beats radio
+- **chilled-cow**: Relaxing lofi music stream
+- **boxlofi**: Box Lofi radio stream
+- **the-chillout**: The Chillout station
+- **smooth-jazz**: Smooth jazz radio
+- **deep-focus**: Radio Paradise Mellow (perfect for focus)
+- **groove-salad**: Ambient/downtempo grooves (SomaFM)
+- **drone-zone**: Atmospheric ambient music (SomaFM)
+- **deep-space**: Deep space ambient sounds (SomaFM)
+- **defcon**: Hacker/cyber ambient music (SomaFM)
 
 ## Controls
 
