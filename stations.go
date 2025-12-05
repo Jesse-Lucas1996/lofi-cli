@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 var stations = map[string]string{
 	"lofi-girl":      "https://play.streamafrica.net/lofiradio",
@@ -15,7 +18,11 @@ func ListStations() {
 	}
 }
 
-func GetStationURL(stationName string) (string, bool) {
+func GetStationURL(stationName string) string {
 	url, exists := stations[stationName]
-	return url, exists
+	if !exists {
+		fmt.Printf("Error: Station '%s' not found\n", stationName)
+		os.Exit(1)
+	}
+	return url
 }

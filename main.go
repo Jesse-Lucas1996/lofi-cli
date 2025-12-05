@@ -42,12 +42,8 @@ func init() {
 }
 
 func playLofi(stationName string) {
-	url, exists := GetStationURL(stationName)
-	if !exists {
-		fmt.Printf("Error: Station '%s' not found\n", stationName)
-		os.Exit(1)
-	}
-
+	url := GetStationURL(stationName)
+	
 	fmt.Printf("🎵 Now playing: %s\n", stationName)
 	fmt.Println("Press Ctrl+C to stop")
 
