@@ -21,20 +21,35 @@ A simple command-line interface to play lofi music in your terminal, written in 
    sudo pacman -S mpv
    ```
 
-2. Install the CLI tool:
+2. Install the CLI tool globally:
    ```bash
    go install github.com/Jesse-Lucas1996/lofi-cli@latest
    ```
 
-3. Ensure Go's bin directory is in your PATH:
-   ```bash
-   export PATH=$PATH:$(go env GOPATH)/bin
-   ```
+3. **Important**: Add Go's bin directory to your PATH (one-time setup):
    
-   Add this to your `~/.bashrc` or `~/.zshrc` to make it permanent:
+   For **bash** users:
    ```bash
    echo 'export PATH=$PATH:$(go env GOPATH)/bin' >> ~/.bashrc
    source ~/.bashrc
+   ```
+   
+   For **zsh** users:
+   ```bash
+   echo 'export PATH=$PATH:$(go env GOPATH)/bin' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+   
+   For **fish** users:
+   ```bash
+   fish_add_path (go env GOPATH)/bin
+   ```
+
+4. Verify installation:
+   ```bash
+   lofi-cli list
+   # or use the alias
+   lofi list
    ```
 
 ### Updating to Latest Version
