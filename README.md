@@ -70,19 +70,44 @@ go build -o $(go env GOPATH)/bin/lofi-cli
 
 ## Usage
 
-To play lofi music:
+### Basic Commands
+
+Play lofi music (default station):
 ```bash
 lofi play
 ```
 
-To play a specific station:
+Play a specific station:
 ```bash
-lofi play --station lofi-girl
+lofi play --station groove-salad
+# or use the short flag
+lofi play -s drone-zone
 ```
 
-To list all available stations:
+List all available stations:
 ```bash
 lofi list
+```
+
+### 🎨 Visualizer Mode
+
+Play with a beautiful audio visualizer (requires cava):
+```bash
+lofi play --visualize
+# or use the short flag
+lofi play -v -s deep-space
+```
+
+**To install cava:**
+```bash
+# Ubuntu/Debian
+sudo apt-get install cava
+
+# macOS
+brew install cava
+
+# Arch Linux
+sudo pacman -S cava
 ```
 
 ## Available Stations
@@ -104,10 +129,12 @@ lofi list
 
 ## Features
 
-- Simple and intuitive CLI interface
-- Multiple lofi stations to choose from
-- Clean and efficient Go implementation
-- Easy installation and usage
+- 🎵 Simple and intuitive CLI interface
+- 📻 10 verified lofi/chill music stations
+- 🎨 Optional audio visualizer mode (cava integration)
+- ⚡ Clean and efficient Go implementation
+- 🚀 Easy installation and usage
+- 🎧 Multiple music genres: lofi, jazz, ambient, synthwave
 
 ## License
 
